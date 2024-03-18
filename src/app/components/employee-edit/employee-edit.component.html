@@ -1,26 +1,31 @@
-<h2>Edit Employee</h2>
-<form (ngSubmit)="updateEmployee()">
-    <div>
-      <label>Employee Number:</label>
-      <input type="text" [(ngModel)]="employee.employeeNumber" name="employeeNumber" required>
-    </div>
-    <div>
-      <label>Employee First name:</label>
-      <input type="text" [(ngModel)]="employee.firstname" name="firstName" required>
-    </div>
-    <div>
-      <label>Employee last name:</label>
-      <input type="text" [(ngModel)]="employee.lastname" name="lastName" required>
-    </div>
-    <div>
-      <label>Employee Birthday:</label>
-      <input type="date" [(ngModel)]="employee.birthday" name="birthday" required>
-    </div>
-    <div>
-      <label>Employee Gender:</label>
-      <input type="radio" [(ngModel)]="employee.gender" name="gender" value="male" required> Male
-      <input type="radio" [(ngModel)]="employee.gender" name="gender" value="female" required> Female
-      <input type="radio" [(ngModel)]="employee.gender" name="gender" value="other" required> Other
-    </div>
-  <button type="submit">Update Employee</button>
-</form>
+<div class="container"> 
+    <h2>Edit Employee</h2>
+    <form (ngSubmit)="editEmployee()">
+      <div>
+        <label>Employee Number:</label>
+        <input type="text" [(ngModel)]="editedEmployee.EmployeeNumber" name="employeeNumber" required>
+      </div>
+      <div>
+        <label>Employee First name:</label>
+        <input type="text" [(ngModel)]="editedEmployee.FirstName" name="firstName" required>
+      </div>
+      <div>
+        <label>Employee last name:</label>
+        <input type="text" [(ngModel)]="editedEmployee.LastName" name="lastName" required>
+      </div>
+      <div>
+        <label>Employee Birthday:</label>
+        <input type="text" [(ngModel)]="editedEmployee.Birthday" name="birthday" [ngModelOptions]="{timezone: 'UTC'}" value="yyyy-mm-dd" required>
+      </div>
+      <div>
+        <label>Employee Gender:</label>
+        <input type="radio" [(ngModel)]="editedEmployee.Gender" name="gender" value="male" required> Male
+        <input type="radio" [(ngModel)]="editedEmployee.Gender" name="gender" value="female" required> Female
+        <input type="radio" [(ngModel)]="editedEmployee.Gender" name="gender" value="other" required> Other
+      </div>
+      <div>
+        <label>Employee Picture (Put hyperlinks):</label>
+        <input type="text" [(ngModel)]="editedEmployee.PictureURL" name="PictureURL" required>
+      </div>
+    </form>
+  </div>

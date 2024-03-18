@@ -1,6 +1,32 @@
-<h2>Employee List</h2> 
-<ul> 
-    <li 
-    *ngFor="let employee of employees"> {{ employee.name }} - {{ employee.position }} 
-    </li> 
-</ul>
+<div class="center-container">
+  <h1>LIST OF EMPLOYEE</h1>
+  <div class="container"> 
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th width="400">EmployeeNumber</th>
+          <th width="400">LastName</th>
+          <th width="250">FirstName</th>
+          <th width="400">Picture</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let i=index">
+          <td style="display: none;">{{employee.EmployeeId}}</td>
+          <td>{{employee.EmployeeNumber}}</td>
+          <td>{{employee.LastName}}</td>
+          <td>{{employee.FirstName}}</td>
+          <td><img [src]="employee.PictureURL" width="100px" height="100px"></td>
+          <td class="actions">
+            <a class="btn btn-primary" style="background-color: #007bff; color: #fff; border-color: #007bff;" (click)="navigateToDetails(employee.EmployeeId)">Details</a>
+            <a class="btn btn-success" (click)="navigateToEdit(employee.EmployeeId)">Edit</a>
+            <a class="btn btn-danger" (click)="deleteEmployee(employee.EmployeeId)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <router-outlet></router-outlet>
+</div>

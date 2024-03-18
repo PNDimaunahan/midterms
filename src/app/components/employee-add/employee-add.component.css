@@ -1,36 +1,48 @@
-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+.container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
   }
   
-  label {
-    font-weight: bold;
+  .container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .container form label {
+    display: block;
     margin-bottom: 5px;
   }
   
-  input[type="text"],
-  input[type="date"] {
-    width: 100%;
+  .container form input[type="text"],
+  .container form input[type="radio"] {
+    width: calc(100% - 24px); /* Adjust width for better alignment */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in width calculation */
   }
   
-  input[type="radio"] {
-    margin-right: 5px;
+  .container form input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
   }
   
-  button[type="submit"] {
+  .container form button {
+    width: calc(100% - 2px);
+    padding: 10px;
     background-color: #007bff;
     color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
     cursor: pointer;
   }
   
-  button[type="submit"]:hover {
+  .container form button:hover {
     background-color: #0056b3;
   }

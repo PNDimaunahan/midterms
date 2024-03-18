@@ -1,10 +1,31 @@
-<div *ngIf="employee" class="employee-details">
-  <h2>Employee Details</h2>
-  <div class="details-container">
-    <p><strong>Employee Number:</strong> {{ employee.employeeNumber }}</p>
-    <p><strong>Name:</strong> {{ employee.firstname }} {{ employee.lastname }}</p>
-    <p><strong>Birthday:</strong> {{ employee.birthday | date:'mediumDate' }}</p>
-    <p><strong>Gender:</strong> {{ employee.gender }}</p>
-    <p><strong>Picture:</strong> {{ employee.Picture }}</p>
+<div class="employee-details-container">
+    <h2>Employee Details</h2>
+    <div class="employee-details-item">
+      <label>Employee ID:</label>
+      <p>{{ employee.EmployeeId }}</p>
+    </div>
+    <div class="employee-details-item">
+      <label>Employee Number:</label>
+      <p>{{ employee.EmployeeNumber }}</p>
+    </div>
+    <div class="employee-details-item">
+      <label>Last Name:</label>
+      <p>{{ employee.LastName }}</p>
+    </div>
+    <div class="employee-details-item">
+      <label>First Name:</label>
+      <p>{{ employee.FirstName }}</p>
+    </div>
+    <div class="employee-details-item">
+      <label>Birthday:</label>
+      <p>{{ employee.Birthday | date }}</p>
+    </div>
+    <div class="employee-details-item">
+      <label>Gender:</label>
+      <p>{{ employee.Gender }}</p>
+    </div>
+    <div class="employee-details-item">
+      <label>Picture:</label>
+      <img [src]="employee.PictureURL" alt="Employee Picture">
+    </div>
   </div>
-</div>
