@@ -1,0 +1,26 @@
+<h2>Edit Employee</h2>
+<form (ngSubmit)="updateEmployee()">
+    <div>
+      <label>Employee Number:</label>
+      <input type="text" [(ngModel)]="employee.employeeNumber" name="employeeNumber" required>
+    </div>
+    <div>
+      <label>Employee First name:</label>
+      <input type="text" [(ngModel)]="employee.firstname" name="firstName" required>
+    </div>
+    <div>
+      <label>Employee last name:</label>
+      <input type="text" [(ngModel)]="employee.lastname" name="lastName" required>
+    </div>
+    <div>
+      <label>Employee Birthday:</label>
+      <input type="date" [(ngModel)]="employee.birthday" name="birthday" required>
+    </div>
+    <div>
+      <label>Employee Gender:</label>
+      <input type="radio" [(ngModel)]="employee.gender" name="gender" value="male" required> Male
+      <input type="radio" [(ngModel)]="employee.gender" name="gender" value="female" required> Female
+      <input type="radio" [(ngModel)]="employee.gender" name="gender" value="other" required> Other
+    </div>
+  <button type="submit">Update Employee</button>
+</form>

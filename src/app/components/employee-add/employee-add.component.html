@@ -1,0 +1,26 @@
+<h2>Add Employee</h2>
+<form (ngSubmit)="addEmployee()">
+  <div>
+    <label>Employee Number:</label>
+    <input type="text" [(ngModel)]="newEmployee.employeeNumber" name="employeeNumber" required>
+  </div>
+  <div>
+    <label>Employee First name:</label>
+    <input type="text" [(ngModel)]="newEmployee.firstname" name="firstName" required>
+  </div>
+  <div>
+    <label>Employee last name:</label>
+    <input type="text" [(ngModel)]="newEmployee.lastname" name="lastName" required>
+  </div>
+  <div>
+    <label>Employee Birthday:</label>
+    <input type="date" [(ngModel)]="newEmployee.birthday" name="birthday" required>
+  </div>
+  <div>
+    <label>Employee Gender:</label>
+    <input type="radio" [(ngModel)]="newEmployee.gender" name="gender" value="male" required> Male
+    <input type="radio" [(ngModel)]="newEmployee.gender" name="gender" value="female" required> Female
+    <input type="radio" [(ngModel)]="newEmployee.gender" name="gender" value="other" required> Other
+  </div>
+  <button type="submit">Add Employee</button>
+</form>
